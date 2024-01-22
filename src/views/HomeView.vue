@@ -13,7 +13,7 @@ export default {
 <template>
 	<div class="home-view">
 		<!-- Заголовок и описание страницы -->
-		<div></div>
+		<div style="font-size: 30px;">HomeView</div>
 		<!-- / Заголовок и описание страницы -->
 	</div>
 

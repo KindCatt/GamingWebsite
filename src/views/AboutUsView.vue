@@ -13,12 +13,12 @@ export default {
 <template>
 	<div class="about-view">
 		<!-- Заголовок и описание страницы -->
-		<div></div>
+		<div style="font-size: 30px;">AboutUsView</div>
 		<!-- / Заголовок и описание страницы -->
 	</div>
 
 </template>
 
-<style>
+<style lang="scss">
 
 </style>

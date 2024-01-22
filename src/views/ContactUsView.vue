@@ -13,7 +13,7 @@ export default {
 <template>
 	<div class="contact-view">
 		<!-- Заголовок и описание страницы -->
-		<div></div>
+		<div style="font-size: 30px;">ContactUsView</div>
 		<!-- / Заголовок и описание страницы -->
 	</div>
 

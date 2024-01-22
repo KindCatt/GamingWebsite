@@ -13,7 +13,7 @@ export default {
 <template>
 	<div class="news-view">
 		<!-- Заголовок и описание страницы -->
-		<div></div>
+		<div style="font-size: 30px;">NewsView</div>
 		<!-- / Заголовок и описание страницы -->
 	</div>
 
