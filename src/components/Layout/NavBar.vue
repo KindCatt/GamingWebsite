@@ -12,7 +12,7 @@
 				<li class="nav-bar__link"><RouterLink to="/services">Portfolio</RouterLink></li>
 				<li class="nav-bar__link"><RouterLink to="/news">News</RouterLink></li>
 			</ul>
-			<RouterLink to="/contact"><button class="nav-bar__btn">Contact us</button></RouterLink>
+			<RouterLink to="/contact"><UButton class="nav-bar__btn">Contact us</UButton></RouterLink>
 		</div>
 		
 	</nav>

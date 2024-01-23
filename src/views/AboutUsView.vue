@@ -1,8 +1,13 @@
 <script>
+import BlockLeft from "@/components/blocks/BlockLeft.vue"
+import SubscribeForm from "@/components/forms/SubscribeForm.vue"
 
 export default {
 	name: 'AboutUsView',
-	components: {},
+	components: {
+		SubscribeForm,
+		BlockLeft
+	},
 
 	data() {
 		return {}
@@ -12,15 +17,52 @@ export default {
 
 <template>
 	<div class="about-view">
+
 		<!-- Заголовок и описание страницы -->
 		<div style="font-size: 30px;">AboutUsView</div>
 		<!-- / Заголовок и описание страницы -->
+		
+		<section class="home-view__subscribe home-subscribe">
+			<div class="container">
+				<BlockLeft>
+					<template #title>Lorem Ipsum</template>
+					<template #content>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					</template>
+					<SubscribeForm></SubscribeForm>
+				</BlockLeft>
+			</div>
+		</section>
+		
+		<div class="about-background"></div>
 	</div>
-
 </template>
 
 <style lang="scss">
-.about-view {
+.container {
+	margin: 0 135px;
+}
+
+.home-view {
+	display: flex;
+	flex-direction: column;
+	padding: 105px 0 165px 0;
+
+	&__three {
+		padding-top: 130px;
+	}
+	&__subscribe {
+		padding-top: 105px;
+	}
+}
+
+.about-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -10;
 	background: linear-gradient(180deg, #3B2A9F 33.88%, rgba(47, 69, 182, 0.44) 81.32%, rgba(114, 138, 185, 0.23) 99.57%);
 }
 </style>

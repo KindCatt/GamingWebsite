@@ -7,14 +7,14 @@
 <style scoped>
 /* .btn {
 
-}
-.btn:hover {
+} */
+/* .btn:hover {
 
-}
-.btn:active {
+} */
+/* .btn:active {
 
-}
-.btn:disabled, .btn:disabled:hover {
+} */
+/* .btn:disabled, .btn:disabled:hover {
 
 } */
 </style>

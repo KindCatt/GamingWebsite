@@ -14,7 +14,9 @@
 					<form action="#" class="subscribe-form__form">
 						<div class="subscribe-form__wrapper">
 							<input class="subscribe-form__input" placeholder="Enter email address" type="email">
-							<button class="subscribe-form__btn">Continue</button>
+
+							<UButton class="subscribe-form__btn">Continue</UButton>
+
 						</div>
 					</form>
 				</div>
@@ -52,11 +54,12 @@
 	&__text {
 		font-size: 17px;
 	}
-	&__body {}
-	&__form {}
+	&__body {
+		display: flex;
+		justify-content: flex-end;
+	}
 	&__wrapper {
 		display: flex;
-		justify-content: space-between;
 		width: 385px;
 		padding: 6px;
 		border-radius: 8px;
@@ -75,7 +78,6 @@
 		border-radius: 8px;
 		background-color: #DC7000;
 		color: #ffffff;
-		text-align: center;
 		font-size: 13px;
 	}
 }
