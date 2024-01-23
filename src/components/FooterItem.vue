@@ -1,7 +1,7 @@
 <template>
 	<div class="footer-item">
 
-		<h5 class="footer-item__header logo">
+		<h5 class="footer-item__header">
 			<slot name="title"></slot>
 		</h5>
 
@@ -13,9 +13,23 @@
 			<slot></slot>
 		</div>
 
+		<div class="footer-item__icon">
+			<slot name="icon"></slot>
+		</div>
+		
 	</div>
 </template>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+.footer-item {
+	display: flex;
+	flex-direction: column;
+	height: 90%;
+	&__header {
+		margin-bottom: 15px;
+	}
+	&__content {
+		flex: 1 1 auto;
+	}
+}
 </style>
