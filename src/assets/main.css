@@ -14,4 +14,12 @@
 #app {
 	max-width: 1440px;
 	margin: 0 auto;
+	
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff;
+}
+.logo {
+	font-size: 24px;
+	font-weight: 800;
+	line-height: 153.5%;
 }

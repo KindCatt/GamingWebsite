@@ -13,7 +13,9 @@ export default {
 
 <template>
 	<div class="app">
-		<NavBar class="app__nav"/>
+		<NavBar class="app__nav">
+			<template #logo>LOGO</template>
+		</NavBar>
 
 		<RouterView class="app__router"/>
 
@@ -23,10 +25,19 @@ export default {
 
 <style lang="scss">
 .app {
+	position: relative;
+
 	display:flex;
 	flex-direction:column;
 	min-height: 100vh;
+	padding-top: 130px;
 
+	&__nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 	&__router {
 		flex: 1 1 auto;
 	}
