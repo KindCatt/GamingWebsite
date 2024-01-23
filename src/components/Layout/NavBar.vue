@@ -44,6 +44,7 @@
 		& a {
 			color: #ffffff;
 		}
+		// Временный кусок кода
 		&:before {
 			content: '';
 			position: absolute;
@@ -56,6 +57,7 @@
 
 			background-color: #DC7000;
 		}
+		// Временный кусок кода
 	}
 	&__btn {
 		padding: 10px 27px;
@@ -63,6 +65,7 @@
 		border-radius: 6px;
 		background-color: #FA9021;
 
+		font-size: 13px;
 		color: #ffffff;
 	}
 }

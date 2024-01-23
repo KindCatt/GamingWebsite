@@ -19,6 +19,8 @@ export default {
 
 </template>
 
-<style>
-
+<style lang="scss">
+.contact-view {
+	background: linear-gradient(176deg, #2211E7 -26.24%, #383837 96.98%);
+}
 </style>

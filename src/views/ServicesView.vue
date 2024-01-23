@@ -19,6 +19,8 @@ export default {
 
 </template>
 
-<style>
-
+<style lang="scss">
+.services-view {
+	background: linear-gradient(177deg, #3A299F -30.15%, #05119D 24.94%, #2351F5 92.85%);
+}
 </style>

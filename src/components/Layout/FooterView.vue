@@ -85,10 +85,6 @@ import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
 	flex-direction: column;
 
 	background: #070707;
-
-	font-family: 'Poppins', sans-serif;
-	color: #FFFFFF;
-
 	&__top {
 		flex: 1 1 auto;
 		display: flex;
@@ -146,10 +142,5 @@ import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
 		text-align: center;
 		line-height: 190.6%;
 	}
-}
-.logo {
-	font-size: 24px;
-	font-weight: 800;
-	line-height: 153.5%;
 }
 </style>

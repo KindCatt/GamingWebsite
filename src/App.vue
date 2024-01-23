@@ -30,16 +30,17 @@ export default {
 	display:flex;
 	flex-direction:column;
 	min-height: 100vh;
-	padding-top: 130px;
 
 	&__nav {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
+		z-index: 999;
 	}
 	&__router {
 		flex: 1 1 auto;
+		padding-top: 130px;
 	}
 }
 </style>

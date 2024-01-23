@@ -19,6 +19,8 @@ export default {
 
 </template>
 
-<style>
-
+<style lang="scss">
+.news-view {
+	background: linear-gradient(176deg, #3165CB -34.57%, #030115 96.75%);
+}
 </style>
