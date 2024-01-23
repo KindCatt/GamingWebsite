@@ -1,5 +1,5 @@
 <script setup>
-import FooterItem from "@/components/FooterItem.vue";
+import FooterItem from "@/components/Layout/FooterItem.vue";
 import FooterFacebook from "@/components/icons/FooterFacebook.vue";
 import FooterInstagram from "@/components/icons/FooterInstagram.vue";
 import FooterTwitter from "@/components/icons/FooterTwitter.vue";
