@@ -1,12 +1,14 @@
 <script>
-import BlockLeft from "@/components/blocks/BlockLeft.vue"
-import SubscribeForm from "@/components/forms/SubscribeForm.vue"
+import ContactSectionOne from "@/components/blocks/contact/ContactSectionOne.vue"
+import ContactSectionTwo from "@/components/blocks/contact/ContactSectionTwo.vue"
+import BlockSubscribe from "@/components/blocks/BlockSubscribe.vue"
 
 export default {
 	name: 'ContactUsView',
 	components: {
-		SubscribeForm,
-		BlockLeft
+		ContactSectionOne,
+		ContactSectionTwo,
+		BlockSubscribe
 	},
 
 	data() {
@@ -18,19 +20,21 @@ export default {
 <template>
 	<div class="contact-view">
 
-		<!-- Заголовок и описание страницы -->
-		<div style="font-size: 30px;">ContactUsView</div>
-		<!-- / Заголовок и описание страницы -->
-
-		<section class="home-view__subscribe home-subscribe">
+		<section class="contact-view__one">
 			<div class="container">
-				<BlockLeft>
-					<template #title>Lorem Ipsum</template>
-					<template #content>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</template>
-					<SubscribeForm></SubscribeForm>
-				</BlockLeft>
+				<ContactSectionOne/>
+			</div>
+		</section>
+
+		<section class="contact-view__two">
+			<div class="container">
+				<ContactSectionTwo/>
+			</div>
+		</section>
+
+		<section class="contact-view__subscribe">
+			<div class="container">
+				<BlockSubscribe/>
 			</div>
 		</section>
 		
@@ -40,19 +44,23 @@ export default {
 
 <style lang="scss">
 .container {
-	margin: 0 135px;
+	margin: 0 109px;
 }
 
-.home-view {
+.contact-view {
 	display: flex;
 	flex-direction: column;
 	padding: 105px 0 165px 0;
 
-	&__three {
-		padding-top: 130px;
+	&__one {
+		padding-top: 100px;
+	}
+	&__two {
+		padding-top: 147px;
 	}
 	&__subscribe {
-		padding-top: 105px;
+		margin-right: 52px;
+		padding-top: 150px;
 	}
 }
 

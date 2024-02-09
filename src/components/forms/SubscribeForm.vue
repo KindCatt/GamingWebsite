@@ -11,11 +11,15 @@
 
 			<div class="subscribe-form__column">
 				<div class="subscribe-form__body">
-					<form action="#" class="subscribe-form__form">
+					<form 
+							action="#" 
+							class="subscribe-form__form"
+							@submit.prevent
+					>
 						<div class="subscribe-form__wrapper">
 							<input class="subscribe-form__input" placeholder="Enter email address" type="email">
 
-							<UButton class="subscribe-form__btn">Continue</UButton>
+							<UButton type="submit" class="subscribe-form__btn btn-subscribe">Continue</UButton>
 
 						</div>
 					</form>
@@ -72,13 +76,6 @@
 			font-size: 13px;
 			font-weight: 300;
 		}
-	}
-	&__btn {
-		padding: 8px 18px;
-		border-radius: 8px;
-		background-color: #DC7000;
-		color: #ffffff;
-		font-size: 13px;
 	}
 }
 </style>

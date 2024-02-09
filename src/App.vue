@@ -17,7 +17,11 @@ export default {
 			<template #logo>LOGO</template>
 		</NavBar>
 
-		<RouterView class="app__router"/>
+		<RouterView class="app__router" v-slot="{ Component }">
+			<transition name="route">
+				<component :is="Component" />
+			</transition>
+		</RouterView>>
 
 		<FooterView class="app__footer"/>
 	</div>
@@ -42,5 +46,19 @@ export default {
 		flex: 1 1 auto;
 		padding-top: 130px;
 	}
+}
+
+.route-enter-active {
+	transition: all 1s ease-out;
+}
+
+.route-leave-active {
+	transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.route-enter-from,
+.route-leave-to {
+	transform: scale(1.1);
+	opacity: 0.3;
 }
 </style>

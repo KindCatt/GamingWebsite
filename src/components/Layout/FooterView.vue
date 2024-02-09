@@ -1,9 +1,9 @@
 <script setup>
 import FooterItem from "@/components/Layout/FooterItem.vue";
-import FooterFacebook from "@/components/icons/FooterFacebook.vue";
-import FooterInstagram from "@/components/icons/FooterInstagram.vue";
-import FooterTwitter from "@/components/icons/FooterTwitter.vue";
-import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
+import FooterFacebook from "@/components/icons/footer/FooterFacebook.vue";
+import FooterInstagram from "@/components/icons/footer/FooterInstagram.vue";
+import FooterTwitter from "@/components/icons/footer/FooterTwitter.vue";
+import FooterLinkedin from "@/components/icons/footer/FooterLinkedin.vue";
 </script>
 
 <template>
@@ -30,7 +30,7 @@ import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
 					<FooterItem>
 						<template #title>
 							<div class="footer-view__logo">
-								About us
+								<RouterLink to="/about">About us</RouterLink>
 							</div>
 						</template>
 						<template #info>
@@ -60,10 +60,18 @@ import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
 					<FooterItem>
 						<template #icon>
 							<ul class="footer-view__social">
-								<li class="footer-view__circle"><FooterFacebook/></li>
-								<li class="footer-view__circle"><FooterInstagram/></li>
-								<li class="footer-view__circle"><FooterTwitter/></li>
-								<li class="footer-view__circle"><FooterLinkedin/></li>
+								<li class="footer-view__circle">
+									<a href="#" target="_blank"><FooterFacebook/></a>
+								</li>
+								<li class="footer-view__circle">
+									<a href="#" target="_blank"><FooterInstagram/></a>
+								</li>
+								<li class="footer-view__circle">
+									<a href="#" target="_blank"><FooterTwitter/></a>
+								</li>
+								<li class="footer-view__circle">
+									<a href="#" target="_blank"><FooterLinkedin/></a>
+								</li>
 							</ul>
 						</template>
 					</FooterItem>
@@ -115,7 +123,6 @@ import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
 		}
 	}
 	&__link {
-		color: #ffffff;
 		line-height: 186.3%;
 	}
 	&__social {
@@ -132,6 +139,12 @@ import FooterLinkedin from "@/components/icons/FooterLinkedin.vue";
 
 		border-radius: 50%;
 		background-color: #ffffff;
+
+		a {
+			width: 100%;
+			text-align: center;
+			line-height: 34px;
+		}
 	}
 	&__bottom {
 		padding: 29px 0;

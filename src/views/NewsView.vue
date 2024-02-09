@@ -1,16 +1,81 @@
 <script>
-import BlockLeft from "@/components/blocks/BlockLeft.vue"
-import SubscribeForm from "@/components/forms/SubscribeForm.vue"
+import NewsSectionOne from "@/components/blocks/news/NewsSectionOne.vue"
+import NewsSectionTwo from "@/components/blocks/news/NewsSectionTwo.vue"
+import BlockSubscribe from "@/components/blocks/BlockSubscribe.vue"
 
 export default {
 	name: 'NewsView',
 	components: {
-		SubscribeForm,
-		BlockLeft
+		NewsSectionOne,
+		NewsSectionTwo,
+		BlockSubscribe
 	},
 
 	data() {
-		return {}
+		return {
+			newsGame: [
+				{
+					id: 1,
+					img: 'src/assets/images/Rectangle 24.png',
+					title: 'Lorem Ipsum is simply dummy text dummy text',
+					text1: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
+					text2: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+				},
+				{
+					id: 2,
+					img: 'src/assets/images/Rectangle 26.png',
+					title: 'Lorem Ipsum is simply dummy text dummy text',
+					text1: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
+					text2: ''
+				}
+			],
+			news: [
+				{
+					id: 1,
+					title: 'Lorem Ipsum is simply dummy text dummy text ?',
+					img: 'src/assets/images/news/1.png',
+				},
+				{
+					id: 2,
+					title: 'Lorem is simply dummy text dummy text ?',
+					img: 'src/assets/images/news/2.png',
+				},
+				{
+					id: 3,
+					title: 'Lorem Ipsum is dummy text dummy text ?',
+					img: 'src/assets/images/news/3.png',
+				},
+				{
+					id: 4,
+					title: 'Is simply dummy text ?',
+					img: 'src/assets/images/news/4.png',
+				},
+				{
+					id: 5,
+					title: 'Lorem dummy text dummy text ?',
+					img: 'src/assets/images/news/5.png',
+				},
+				{
+					id: 6,
+					title: 'Lorem Ipsum is simply dummy text ?',
+					img: 'src/assets/images/news/6.png',
+				},
+				{
+					id: 7,
+					title: 'Ipsum is simply dummy text dummy text ?',
+					img: 'src/assets/images/news/7.png',
+				}
+			]
+		}
+	},
+
+	mounted() {
+		// Случайный цвет фона, вложенный в массив news
+		const rand = () => Math.round(Math.random() * 255)
+		return (this.news = this.news.map(item => (
+			{ ...item, background: `rgb(${rand()}, ${rand()}, ${rand()})` }
+		)))
+		// Случайный цвет фона, вложенный в массив news
 	}
 }
 </script>
@@ -18,19 +83,24 @@ export default {
 <template>
 	<div class="news-view">
 
-		<!-- Заголовок и описание страницы -->
-		<div style="font-size: 30px;">NewsView</div>
-		<!-- / Заголовок и описание страницы -->
-
-		<section class="home-view__subscribe home-subscribe">
+		<section class="news-view__one">
 			<div class="container">
-				<BlockLeft>
-					<template #title>Lorem Ipsum</template>
-					<template #content>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</template>
-					<SubscribeForm></SubscribeForm>
-				</BlockLeft>
+				<NewsSectionOne
+						:news="news"
+				/>
+			</div>
+		</section>
+
+		<section class="news-view__two">
+			<NewsSectionTwo
+					:newsGame="newsGame"
+					:news="news"
+			/>
+		</section>
+
+		<section class="news-view__subscribe">
+			<div class="container">
+				<BlockSubscribe/>
 			</div>
 		</section>
 
@@ -40,19 +110,23 @@ export default {
 
 <style lang="scss">
 .container {
-	margin: 0 135px;
+	margin: 0 109px;
 }
 
-.home-view {
+.news-view {
 	display: flex;
 	flex-direction: column;
 	padding: 105px 0 165px 0;
 
-	&__three {
-		padding-top: 130px;
+	&__one {
+		padding-top: 109px;
+	}
+	&__two {
+		padding-top: 103px;
 	}
 	&__subscribe {
-		padding-top: 105px;
+		margin-right: 52px;
+		padding-top: 73px;
 	}
 }
 

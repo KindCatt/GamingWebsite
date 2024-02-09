@@ -1,20 +1,66 @@
- <template>
+<script>
+import NavbarLink from '@/components/icons/NavbarLink.vue';
+import { RouterLink } from 'vue-router';
+
+export default {
+	components: {
+		RouterLink,
+		NavbarLink,
+},
+
+	data() {
+		return {
+			menu: [
+				{path: '/', name: 'Home', isLineShow: false},
+				{path: '/about', name: 'About us', isLineShow: false},
+				{path: '/portfolio', name: 'Portfolio', isLineShow: false},
+				{path: '/news', name: 'News', isLineShow: false}
+			]
+		}
+	},
+
+	methods: {
+		activeLink(index) {
+			this.menu = this.menu.map(item => ({ ...item, isLineShow: false}));
+			this.menu[index].isLineShow = true
+		}
+	}
+}
+</script>
+
+<template>
 	<nav class="nav-bar">
 		<div class="nav-bar__logo logo">
+
 			<p class="logo__text">
 				<slot name="logo"></slot>
 			</p>
+
 		</div>
+
 		<div class="nav-bar__nav">
+
 			<ul class="nav-bar__list">
-				<li class="nav-bar__link"><RouterLink to="/">Home</RouterLink></li>
-				<li class="nav-bar__link"><RouterLink to="/about">About us</RouterLink></li>
-				<li class="nav-bar__link"><RouterLink to="/services">Portfolio</RouterLink></li>
-				<li class="nav-bar__link"><RouterLink to="/news">News</RouterLink></li>
+				<li class="nav-bar__link" 
+						v-for="(item, index) in menu" :key="index"
+						@click="activeLink(index)"
+				>
+					<RouterLink :to="item.path">{{ item.name }}</RouterLink>
+					<NavbarLink class="nav-bar__link-line"
+							v-if="item.isLineShow"
+					/>
+				</li>
 			</ul>
-			<RouterLink to="/contact"><UButton class="nav-bar__btn">Contact us</UButton></RouterLink>
+
+			<UButton 
+					type="button" 
+					class="nav-bar__btn btn-nav"
+					@click="$router.push('/contact')"
+			>
+				Contact us
+			</UButton>
+
 		</div>
-		
 	</nav>
 </template>
 
@@ -25,8 +71,8 @@
 	align-items: center;
 	height: 130px;
 	padding: 0 60px;
-
 	background-color: transparent;
+
 	&__logo {
 		margin: -7px 0 0 -5px;
 	}
@@ -36,37 +82,18 @@
 	}
 	&__list {
 		display: flex;
-		column-gap: 88px;
-		margin-right: 36px;
+		column-gap: 60px;
+		margin-right: 22px;
 	}
 	&__link {
 		position: relative;
-		& a {
-			color: #ffffff;
-		}
-		// Временный кусок кода
-		&:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			margin: 0 0 -7px -14px;
-
-			width: 39px;
-			height: 4px;
-
-			background-color: #DC7000;
-		}
-		// Временный кусок кода
+		padding: 10px 14px;
+		cursor: pointer;
 	}
-	&__btn {
-		padding: 10px 27px;
-
-		border-radius: 6px;
-		background-color: #FA9021;
-
-		font-size: 13px;
-		color: #ffffff;
+	&__link-line {
+		position: absolute;
+		left: 0;
+		bottom: 0;
 	}
 }
 </style>

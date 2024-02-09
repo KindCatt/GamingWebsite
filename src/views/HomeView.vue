@@ -1,59 +1,131 @@
 <script>
-import BlockLeft from "@/components/blocks/BlockLeft.vue"
-import SubscribeForm from "@/components/forms/SubscribeForm.vue"
+import HomeSectionOne from "@/components/blocks/home/HomeSectionOne.vue"
+import HomeSectionTwo from "@/components/blocks/home/HomeSectionTwo.vue"
+import HomeSectionThree from "@/components/blocks/home/HomeSectionThree.vue"
+import HomeSectionFour from "@/components/blocks/home/HomeSectionFour.vue"
+import HomeSectionFive from "@/components/blocks/home/HomeSectionFive.vue"
+import BlockSubscribe from "@/components/blocks/BlockSubscribe.vue"
+import GameMobile from '@/components/icons/home/GameMobile.vue'
+import GamePc from '@/components/icons/home/GamePc.vue'
+import GamePs4 from '@/components/icons/home/GamePs4.vue'
+import GameArVrSolutions from '@/components/icons/home/GameArVrSolutions.vue'
+import GameArVrDesign from '@/components/icons/home/GameArVrDesign.vue'
+import Game3dModeling from '@/components/icons/home/Game3dModeling.vue'
 
 export default {
 	name: 'HomeView',
 	components: {
-		SubscribeForm,
-		BlockLeft
+		HomeSectionOne,
+		HomeSectionTwo,
+		HomeSectionThree,
+		HomeSectionFour,
+		HomeSectionFive,
+		BlockSubscribe,
 	},
 
 	data() {
 		return {
-			img: ''
+			followers: [
+				{
+					id: 1,
+					img: 'src/assets/images/Rectangle 23.png',
+					qnt: 40
+				},
+				{
+					id: 2,
+					img: 'src/assets/images/Rectangle 24.png',
+					qnt: 50
+				},
+				{
+					id: 3,
+					img: 'src/assets/images/Rectangle 25.png',
+					qnt: 30
+				},
+				{
+					id: 4,
+					img: 'src/assets/images/Rectangle 26.png',
+					qnt: 45
+				}
+			],
+			devices: [
+				{
+					id: 1,
+					svg: GameMobile,
+					text: 'Mobile Game Development'
+				},
+				{
+					id: 2,
+					svg: GamePc,
+					text: 'PC Game Development'
+				},
+				{
+					id: 3,
+					svg: GamePs4,
+					text: 'PS4 Game Development'
+				},
+				{
+					id: 4,
+					svg: GameArVrSolutions,
+					text: 'AR/VR Solutions'
+				},
+				{
+					id: 5,
+					svg: GameArVrDesign,
+					text: 'AR/ VR design'
+				},
+				{
+					id: 6,
+					svg: Game3dModeling,
+					text: '3D Modelings'
+				}
+			],
+			lastprojects: [
+				'src/assets/images/Rectangle 15.png',
+				'src/assets/images/Rectangle 16.png',
+				'src/assets/images/Rectangle 17.png',
+				'src/assets/images/Rectangle 19.png',
+				'src/assets/images/Rectangle 18.png',
+				'src/assets/images/Rectangle 20.png',
+			],
 		}
 	}
 }
 </script>
 
 <template>
-	
 	<div class="home-view">
 
-		<!-- Заголовок и описание страницы -->
-		<section style="font-size: 30px;">HomeView</section>
-		<!-- / Заголовок и описание страницы -->
-
-
-		<section class="home-view__three home-three">
+		<section class="home-view__one">
 			<div class="container">
-				<div class="home-three__title">
-					<h2 class="home-three__title-text">
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</h2>
-				</div>
-				<BlockLeft>
-					<template #title>Lorem Ipsum</template>
-					<template #content>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-					</template>
-					<div class="home-three__image">
-						<img src="@/assets/images/Rectangle 4.png" alt="Что-то пошло не так">
-					</div>
-				</BlockLeft>
+				<HomeSectionOne/>
 			</div>
 		</section>
 
-		<section class="home-view__subscribe home-subscribe">
+		<section class="home-view__two">
 			<div class="container">
-				<BlockLeft>
-					<template #title>Lorem Ipsum</template>
-					<template #content>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					</template>
-					<SubscribeForm></SubscribeForm>
-				</BlockLeft>
+				<HomeSectionTwo :followers="followers"/>
+			</div>
+		</section>
+
+		<section class="home-view__three">
+			<div class="container">
+				<HomeSectionThree/>
+			</div>
+		</section>
+
+		<section class="home-view__four">
+			<HomeSectionFour :devices="devices"/>
+		</section>
+
+		<section class="home-view__five">
+			<div class="container">
+				<HomeSectionFive :lastprojects="lastprojects"/>
+			</div>
+		</section>
+
+		<section class="home-view__subscribe">
+			<div class="container">
+				<BlockSubscribe/>
 			</div>
 		</section>
 
@@ -71,34 +143,23 @@ export default {
 	flex-direction: column;
 	padding: 105px 0 165px 0;
 
+	&__one {
+		padding-top: 116px;
+	}
+	&__two {
+		padding-top: 178px;
+	}
 	&__three {
-		padding-top: 130px;
+		padding-top: 129px;
+	}
+	&__four {
+		padding-top: 157px;
+	}
+	&__five {
+		padding-top: 141px;
 	}
 	&__subscribe {
 		padding-top: 105px;
-	}
-}
-
-.home-three {
-	&__title {
-		width: 826px;
-		margin: 0 auto 65px;
-	}
-	&__title-text {
-		text-align: center;
-		font-size: 35px;
-		font-weight: 600;
-		line-height: 187.5%;
-	}
-	&__image {
-		height: 462px;
-		// background: rgba(0, 0, 0, 0.3) url('@/assets/images/Rectangle 4.png') center/cover no-repeat;
-		& img {
-			object-fit: cover;
-			height: 100%;
-			width: 100%;
-
-		}
 	}
 }
 

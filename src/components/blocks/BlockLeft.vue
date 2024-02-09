@@ -23,6 +23,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	height: 100%;
+	
 	&__text {
 		flex: 0 1 50%;
 	}
